@@ -1,38 +1,38 @@
 const HtmlWebpackPlugin =
-    require('html-webpack-plugin');
+  require('html-webpack-plugin');
+const path = require('path');
 
-module.export = {
-  entry: './src/index.js',
-  output: {
-    filename: "app.blunde.js"
+
+
+module.exports={
+  entry:"./src/index.js",
+  output:{
+      path:path.join(__dirname,'build'),
+      filename:'blunde.js'
   },
-  devServer: {
-    host: '192.168.1.56',
-    port: 3001,
-    contentBase: ':/dist',
-    disableHostCheck: true,
-    stats: { 
-        colors: true 
-    },
-    historyApiFallback: true
+  devServer:{
+      host:'192.168.1.56',
+      port:3001,
+      contentBase:':/dist',
+      disableHostCheck:true,
+      stats:{colors:true},
+      historyApiFallback:true
+  },
+  resolve:{
+      extensions: ['.js','.jsx']
+  },
+  module:{
+      rules: [
+          {
+              test: /\.(js|jsx)$/,
+              exclude: [/node_modules/],
+              use: ['babel-loader']
+          }
+      ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-        template: "src/index.html"
-    })
-  ],
-  module: {
-    rules: [
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-    use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env', '@babel/preset-react']
-            }
-        }
-    }
-        ]
-    }
+      new HtmlWebpackPlugin({
+          template: './src/index.html'
+      }),
+  ]
 }

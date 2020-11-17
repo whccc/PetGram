@@ -1,5 +1,15 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import ApolloClient from 'apollo-boost';
+import {ApolloProvider} from 'react-apollo'
+import {App} from './App'
 
-ReactDom.render('hpña',
-    document.getElementById('app'));
+const client = new ApolloClient({
+    uri:'https://petgramapi-git-master.whccc.vercel.app/graphql'
+});
+ReactDOM.render(
+    <ApolloProvider client={client}>
+        <App/>
+    </ApolloProvider>,
+    document.getElementById('app')
+);

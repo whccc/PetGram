@@ -4,9 +4,9 @@
   "description": "¡Sígueme en Youtube! https://www.youtube.com/midudev",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server -d --open",
-    "build": "webpack",
-    "lint":"standard",
+    "start": "webpack-dev-server -d --open",
+    "build": "webpack -p",
+    "lint": "standard",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,20 +22,24 @@
   "homepage": "https://github.com/whccc/PetGram#readme",
   "devDependencies": {
     "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.4",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
     "babel-loader": "^8.2.1",
     "html-webpack-plugin": "^4.5.0",
-    "standard": "^16.0.2",
-    "webpack": "^5.4.0",
+    "json-loader": "^0.5.7",
+    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.4",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "apollo-boost": "^0.4.9",
+    "graphql": "^15.4.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  },
-  "standard":{
-    "ignore":["/api/**"]
+    "react-apollo": "^3.1.5",
+    "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
+    "styled-components": "^5.2.1"
   }
 }
