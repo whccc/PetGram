@@ -1,9 +1,12 @@
-import React, { Fragment } from 'react';
-import {ListOfCategories} from './components/ListOfCategories';
+import React from 'react';
 import {GlobalStyle} from './styles/GlobalStyles'
-import {ListOfPhotoCards} from './Container/ListOfPhotoCards'
 import {Logo} from './components/Logo'
-import {PhotoCardWithQuery} from './Container/PhotoCardWithQuery'
+import {Home} from './Page/Home'
+import {Detail} from './Page/Detail'
+import {Router} from '@reach/router'
+import {NavBar} from './components/NavBar'
+
+
 
 export const App=()=>{
     const urlParams= new window.URLSearchParams(window.location.search);
@@ -13,13 +16,12 @@ export const App=()=>{
     <div>
         <GlobalStyle/>
         <Logo/>
-        {
-            detalId ? <PhotoCardWithQuery id={detalId}/>:
-            <Fragment>
-                 <ListOfCategories/>
-        <ListOfPhotoCards categoryId={3}/>
-            </Fragment>
-        }
+            <Router>
+                <Home path='/'/>
+                <Home path='/pet/:id'/>
+                <Detail path='/detail/:detailId'/>
+            </Router>
+        <NavBar/>
        
     </div>);
 }

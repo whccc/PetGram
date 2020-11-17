@@ -8,11 +8,12 @@ module.exports={
   entry:"./src/index.js",
   output:{
       path:path.join(__dirname,'build'),
-      filename:'blunde.js'
+      filename:'blunde.js',
+      publicPath:'/'
   },
   devServer:{
       host:'192.168.1.56',
-      port:3001,
+      port:3010,
       contentBase:':/dist',
       disableHostCheck:true,
       stats:{colors:true},

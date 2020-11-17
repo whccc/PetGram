@@ -1,8 +1,10 @@
 import * as React from "react"
 import styled from "styled-components"
 import {Svg} from './styles'
+import {Link} from '@reach/router'
 export const Logo=()=> {
   return (
+    <Link to="/">
     <Svg
       width={387.158}
       height={121.617}
@@ -112,6 +114,7 @@ export const Logo=()=> {
       </g>
       <style />
     </Svg>
+    </Link>
   )
 }
 
